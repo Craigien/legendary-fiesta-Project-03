@@ -4,7 +4,7 @@ const carSeeds = require('./carSeeds.json');
 
 db.once('open', async () => {
   await Car.deleteMany({});
-  await Car.create(carSeedsSeeds);
+  await Car.create(carSeeds);
 
   console.log('all done!');
   process.exit(0);

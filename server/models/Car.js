@@ -40,6 +40,9 @@ const carSchema = new Schema(
     },
     color: {
         type: String,
+    },
+    image: {
+        type: String,
     }
     
   },
