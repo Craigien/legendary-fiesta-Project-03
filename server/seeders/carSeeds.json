@@ -68,7 +68,8 @@
         "price": 38700,
         "monthlyPayment": 780,
         "mileage": 17000,
-        "color": "black"
+        "color": "grey",
+        "image": "toyota-rav-4.jpg"
     },
     {
         "year": "2019",
@@ -79,7 +80,8 @@
         "price": 30700,
         "monthlyPayment": 640,
         "mileage": 56300,
-        "color": "white"
+        "color": "black",
+        "image": "chevrolet-blazer.jpeg"
     },
     {
         "year": "2020",
@@ -90,7 +92,8 @@
         "price": 27000,
         "monthlyPayment": 570,
         "mileage": 8730,
-        "color": "grey"
+        "color": "silver",
+        "image": "nissan-murano.jpg"
     },
     {
         "year": "2023",
@@ -101,7 +104,8 @@
         "price": 25000,
         "monthlyPayment": 475,
         "mileage": 0,
-        "color": "white"
+        "color": "blue",
+        "image": "nissan-kicks.jpg"
     },
     {
         "year": "2023",
@@ -111,7 +115,8 @@
         "condition": "New",
         "price": 74500,
         "monthlyPayment": 1065,
-        "color": "silver"
+        "color": "white",
+        "image": "ford-expedition.jpg"
     },
     {
         "year": "2023",
@@ -121,7 +126,8 @@
         "condition": "New",
         "price": 32200,
         "monthlyPayment": 500,
-        "color": "black"
+        "color": "red",
+        "image": "chevrolet-camaro.jpg"
     },
     {
         "year": "2023",
@@ -131,7 +137,8 @@
         "condition": "New",
         "price": 58350,
         "monthlyPayment": 900,
-        "color": "blue"
+        "color": "white",
+        "image": "bmw-430i.jpg"
     },
     {
         "year": "2023",
@@ -141,7 +148,8 @@
         "condition": "New",
         "price": 34150,
         "monthlyPayment": 640,
-        "color": "blue"
+        "color": "red",
+        "image": "dodge-challenger.jpg"
     },
     {
         "year": "2021",
@@ -162,7 +170,8 @@
         "condition": "Used",
         "price": 15000,
         "monthlyPayment": 300,
-        "color": "silver"
+        "color": "silver",
+        "image": "ford-mustang.jpg"
     },
     {
         "year": "2023",
@@ -205,7 +214,8 @@
         "condition": "Used",
         "price": 20800,
         "monthlyPayment": 420,
-        "color": "red"
+        "color": "blue",
+        "image": "ford-fusion.jpg"
     },
     {
         "year": "2021",
@@ -215,7 +225,8 @@
         "condition": "Used",
         "price": 18600,
         "monthlyPayment": 385,
-        "color": "chevrolet-malibu.jpg"
+        "color": "black",
+        "image" : "chevrolet-malibu.jpg"
     },
     {
         "year": "2023",
@@ -226,7 +237,7 @@
         "price": 27500,
         "monthlyPayment": 495,
         "color": "white",
-        "image": "toyota-corolla.jpg"
+        "image": "toyota-corolla.png"
     },
     {
         "year": "2008",
@@ -258,7 +269,8 @@
         "condition": "Used",
         "price": "18900",
         "monthlyPayment": 400,
-        "color": "grey"
+        "color": "yellow",
+        "image": "ford-focus.jpg"
     },
     {
         "year": "2020",
