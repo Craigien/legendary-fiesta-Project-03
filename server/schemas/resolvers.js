@@ -1,5 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User } = require('../models');
+const { Car } = require('../models/Car')
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -20,8 +21,10 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+    cars: async () => {
+      return Car.find();
+    }
   },
-
   // Add user to database
   Mutation: {
     addUser: async (parent, { email, password }) => {

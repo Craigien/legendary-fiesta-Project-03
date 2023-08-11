@@ -2,10 +2,18 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
 
-  type User {
+  type Car {
     _id: ID
-    email: String
-    password: String
+    year: String
+    make: String
+    model: String
+    vehicleType: String
+    condition: String
+    price: Number
+    monthlyPayment: Number
+    mileage: Number
+    color: String
+    image: String
   }
 
   type Auth {
@@ -22,6 +30,9 @@ const typeDefs = gql`
   type Mutation {
     addUser(email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    addAppointment
+    updateAppointment
+    deleteAppointment
   }
 `;
 
