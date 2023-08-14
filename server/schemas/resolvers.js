@@ -63,7 +63,7 @@ const resolvers = {
       return await Appointment.findOneAndUpdate({ appointmentId: appointmentId }, { appointmentDate }, { appointmentTime }, { new: true });
     },
     deleteAppointment: async (parent, { appointmentId }) => {
-      return await Appointment.findOneAndDelete({ appointmentid: appointmentId });
+      return await Appointment.findOneAndDelete({ appointmentId: appointmentId });
     },
     addServiceAppointment: async (parent, { appointmentId, userId, appointmentType, serviceType, appointmentDate, appointmentTime, comments}) => {
       return await Appointment.create({appointmentId, userId, appointmentType, serviceType, appointmentDate, appointmentTime, comments})
@@ -72,7 +72,7 @@ const resolvers = {
       return await Appointment.findOneAndUpdate({appointmentId: appointmentId }, { appointmentDate}, { appointmentTime}, { new: true });
     },
     deleteServiceAppointment: async (parent, { appointmentId }) => {
-      return await Appointment.findOneAndDelete({ appointmentid: appointmentId });
+      return await Appointment.findOneAndDelete({ appointmentId: appointmentId });
     }
   },
 };
