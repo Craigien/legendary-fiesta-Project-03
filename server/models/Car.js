@@ -1,4 +1,4 @@
-const { Schema, Types } = require('mongoose');
+const { Schema, Types, model } = require('mongoose');
 
 const carSchema = new Schema(
   {
@@ -22,7 +22,7 @@ const carSchema = new Schema(
         type: String,
         required: true,
     },
-    conidtion: {
+    condition: {
         type: String,
         required: true,
     },
@@ -46,13 +46,13 @@ const carSchema = new Schema(
     }
     
   },
-  {
-    toJSON: {
-      id: false
-    }
-  }
+  // {
+  //   toJSON: {
+  //     id: false
+  //   }
+  // }
 );
 
 const Car = model('car', carSchema);
 
-module.exports = carSchema;
+module.exports = Car;

@@ -9,19 +9,19 @@ const appointmentSchema = new Schema(
         },
         carID: {
             car: [{ type: Schema.Types.ObjectId, ref: 'car' }],
-            required: false,
+            // required: false,
         },
         userID: {
             user: [{ type: Schema.Types.ObjectId, ref: 'user' }],
-            required: true,
+            // required: true,
         },
         appointmentType: {
-            type: string,
+            type: String,
             required: true,
         },
         serviceType: {
-            type: string,
-            required: false,
+            type: String,
+            // required: false,
         },
         appointmentDate: {
             type: Date,
@@ -33,16 +33,16 @@ const appointmentSchema = new Schema(
         },
         comments: {
             type: String,
-            required: false,
+            // required: false,
         }
     },
-    {
-        toJSON: {
-            id: false,
-        },
-    }
+    // {
+    //     toJSON: {
+    //         id: false,
+    //     },
+    // }
 );
 
-const Course = model('course', courseSchema);
+const Appointment = model('appointment', appointmentSchema);
 
-module.exports = Course;
+module.exports = Appointment;

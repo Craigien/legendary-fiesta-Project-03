@@ -1,22 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const VehicleList = ({ vehicles, title }) => {
-    if (!vehicles.length) {
+const VehicleList = ({ cars, title }) => {
+    // console.log(cars);
+
+    if (!cars.length) {
         return <h3>No Vehicles Found</h3>
     }
 
     return (
         <div>
-            {vehicles &&
-                vehicles.map((vehicle) => (
-                    <Link to={`/vehicles/${vehicle.id}`}>
-                        <div key={vehicle._id}>
-                            <h4>{vehicle.year} {vehicle.make} {vehicle.model}</h4>
+            <h3>{title}</h3>
+            {cars &&
+                cars.map((car) => (
+                    <Link to={`/vehicles/${car._id}`}>
+                        <div key={car._id}>
+                            <h4>{car.year} {car.make} {car.model}</h4>
                             <div className="card">
-                                <img src={vehicle.image} className="card-img-top" alt={vehicle.name} />
+                                <img src={`../../images/${car.image}`} className="card-img-top" alt={car.model} />
                                 <div className="card-body">
-                                    <p className="card-text">{vehicle.price}</p>
+                                    <p className="card-text">${car.price}</p>
                                 </div>
                             </div>
                         </div>
@@ -27,3 +30,5 @@ const VehicleList = ({ vehicles, title }) => {
 };
 
 export default VehicleList;
+
+// Images are causing GET request
