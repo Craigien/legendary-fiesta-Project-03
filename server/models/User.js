@@ -1,6 +1,6 @@
-const { Schema, Types } = require('mongoose');
+const { Schema, Types, model } = require('mongoose');
 
-const Schema = new Schema(
+const userSchema = new Schema(
   {
     userId: {
       type: Schema.Types.ObjectId,
@@ -17,14 +17,14 @@ const Schema = new Schema(
       minlength: 6,
     },
   },
-  {
-    toJSON: {
-      getters: true,
-    },
-    id: false,
-  }
+  // {
+  //   toJSON: {
+  //     getters: true,
+  //   },
+  //   id: false,
+  // }
 );
 
 const User = model('user', userSchema);
 
-module.exports = userSchema;
+module.exports = User;

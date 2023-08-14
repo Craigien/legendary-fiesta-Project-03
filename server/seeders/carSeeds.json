@@ -115,6 +115,7 @@
         "condition": "New",
         "price": 74500,
         "monthlyPayment": 1065,
+        "mileage": 0,
         "color": "white",
         "image": "ford-expedition.jpg"
     },
@@ -126,6 +127,7 @@
         "condition": "New",
         "price": 32200,
         "monthlyPayment": 500,
+        "mileage": 0,
         "color": "red",
         "image": "chevrolet-camaro.jpg"
     },
@@ -137,6 +139,7 @@
         "condition": "New",
         "price": 58350,
         "monthlyPayment": 900,
+        "mileage": 0,
         "color": "white",
         "image": "bmw-430i.jpg"
     },
@@ -148,6 +151,7 @@
         "condition": "New",
         "price": 34150,
         "monthlyPayment": 640,
+        "mileage": 0,
         "color": "red",
         "image": "dodge-challenger.jpg"
     },
@@ -159,6 +163,7 @@
         "condition": "Used",
         "price": 42450,
         "monthlyPayment": 870,
+        "mileage": 0,
         "color": "silver",
         "image": "lexus-rc-350.jpg"
     },
@@ -170,6 +175,7 @@
         "condition": "Used",
         "price": 15000,
         "monthlyPayment": 300,
+        "mileage": 0,
         "color": "silver",
         "image": "ford-mustang.jpg"
     },
@@ -181,6 +187,7 @@
         "condition": "New",
         "price": 27850,
         "monthlyPayment": 510,
+        "mileage": 0,
         "color": "silver",
         "image": "toyota-camry.jpg"
     },
@@ -192,6 +199,7 @@
         "condition": "New",
         "price": 25445,
         "monthlyPayment": 380,
+        "mileage": 0,
         "color": "red",
         "image": "honda-civic.jpg"
     },
@@ -203,6 +211,7 @@
         "condition": "Used",
         "price": 20000,
         "monthlyPayment": 330,
+        "mileage": 0,
         "color": "white",
         "image": "nissan-altima.jpg"
     },
@@ -214,6 +223,7 @@
         "condition": "Used",
         "price": 20800,
         "monthlyPayment": 420,
+        "mileage": 0,
         "color": "blue",
         "image": "ford-fusion.jpg"
     },
@@ -225,6 +235,7 @@
         "condition": "Used",
         "price": 18600,
         "monthlyPayment": 385,
+        "mileage": 0,
         "color": "black",
         "image" : "chevrolet-malibu.jpg"
     },
@@ -236,6 +247,7 @@
         "condition": "New",
         "price": 27500,
         "monthlyPayment": 495,
+        "mileage": 0,
         "color": "white",
         "image": "toyota-corolla.png"
     },
@@ -247,6 +259,7 @@
         "condition": "Used",
         "price": 7600,
         "monthlyPayment": 125,
+        "mileage": 0,
         "color": "blue",
         "image": "toyota-prius.jpg"
     },
@@ -258,6 +271,7 @@
         "condition": "New",
         "price": 36070,
         "monthlyPayment": 530,
+        "mileage": 0,
         "color": "blue",
         "image": "mini-cooper.jpg"
     },
@@ -269,6 +283,7 @@
         "condition": "Used",
         "price": "18900",
         "monthlyPayment": 400,
+        "mileage": 0,
         "color": "yellow",
         "image": "ford-focus.jpg"
     },
@@ -280,6 +295,7 @@
         "condition": "Used",
         "price": 23900,
         "monthlyPayment": 500,
+        "mileage": 0,
         "color": "white",
         "image": "mazda-3.jpg"
     }

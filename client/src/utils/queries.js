@@ -26,3 +26,39 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+export const QUERY_VEHICLES = gql`
+  query Cars {
+    cars {
+      _id
+      year
+      make
+      model
+      vehicleType
+      condition
+      price
+      monthlyPayment
+      mileage
+      color
+      image
+    }
+  }
+`;
+
+export const QUERY_SINGLE_VEHICLE = gql`
+query Car($carId: ID!) {
+  car(carId: $carId) {
+    _id
+    year
+    make
+    model
+    vehicleType
+    condition
+    price
+    monthlyPayment
+    mileage
+    color
+    image
+  }
+}
+`;
