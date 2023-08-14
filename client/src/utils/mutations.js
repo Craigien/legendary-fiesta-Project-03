@@ -23,3 +23,6 @@ export const LOGIN_USER = gql`
     }
   }
 `;
+
+export const ADD_APPOINTMENT = gql`
+  mutation addAppointment()`

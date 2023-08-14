@@ -18,11 +18,10 @@ const typeDefs = gql`
 
   type Appointment {
     _id: ID
-    carID: ID
-    userID: ID
+    carId(carId: ID!): Car
+    userId(userId: ID!): User
     appointmentType: String
-    serviceType: String
-    appointmentDate: Date
+    appointmentDate: String
     appointmentTime: String
     comments: String
   }
@@ -49,13 +48,14 @@ const typeDefs = gql`
   type Mutation {
     addUser(email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addAppointment(appointmentId: ID!, carId: ID!, userId: ID!, appointmentType: String!,appointmentDate: Date!, appointmentTime: String!, comments: String!): Appointment
-    updateAppointment(appointmentId: ID!, appointmentDate: Date!, appointmentTime: String!): Appointment
+    addAppointment(carId: ID!, userId: ID!, appointmentType: String!,appointmentDate: String!, appointmentTime: String!, comments: String!): Appointment
+    updateAppointment(appointmentId: ID!, appointmentDate: String!, appointmentTime: String!): Appointment
     deleteAppointment(appointmentId: ID!): Appointment
-    addServiceAppointment(appointmentId: ID!, carId: ID!, userId: ID!, appointmentType: String!, serviceType: String!, appointmentDate: Date!, appointmentTime: String!, comments: String!): Appointment
-    updateServiceAppointment(appointmentId: ID!, appointmentDate: Date!, appointmentTime: String!): Appointment
-    deleteServiceAppointment(appointmentId: ID!): Appointment
   }
 `;
 
 module.exports = typeDefs;
+
+// addServiceAppointment(appointmentId: ID!, carId: ID!, userId: ID!, appointmentType: String!, serviceType: String!, appointmentDate: Date!, appointmentTime: String!, comments: String!): Appointment
+// updateServiceAppointment(appointmentId: ID!, appointmentDate: Date!, appointmentTime: String!): Appointment
+// deleteServiceAppointment(appointmentId: ID!): Appointment

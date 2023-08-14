@@ -54,9 +54,9 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addAppointment: async (parent, { appointmentId, carId, userId, appointmentType, appointmentDate, appointmentTime, comments }) => {
+    addAppointment: async (parent, { carId, userId, appointmentType, appointmentDate, appointmentTime, comments }) => {
       // Create and return the new School object
-      return await Appointment.create({ appointmentId, carId, userId, appointmentType, appointmentDate, appointmentTime, comments });
+      return await Appointment.create({ carId, userId, appointmentType, appointmentDate, appointmentTime, comments });
     },
     updateAppointment: async (parent, { appointmentId, appointmentDate, appointmentTime }) => {
       // Find and update the matching class using the destructured args
@@ -65,15 +65,15 @@ const resolvers = {
     deleteAppointment: async (parent, { appointmentId }) => {
       return await Appointment.findOneAndDelete({ appointmentId: appointmentId });
     },
-    addServiceAppointment: async (parent, { appointmentId, userId, appointmentType, serviceType, appointmentDate, appointmentTime, comments}) => {
-      return await Appointment.create({appointmentId, userId, appointmentType, serviceType, appointmentDate, appointmentTime, comments})
-    },
-    updateServiceAppointment: async (parent, {appointmentId, appointmentDate, appointmentTime }) => {
-      return await Appointment.findOneAndUpdate({appointmentId: appointmentId }, { appointmentDate}, { appointmentTime}, { new: true });
-    },
-    deleteServiceAppointment: async (parent, { appointmentId }) => {
-      return await Appointment.findOneAndDelete({ appointmentId: appointmentId });
-    }
+    // addServiceAppointment: async (parent, { appointmentId, userId, appointmentType, serviceType, appointmentDate, appointmentTime, comments}) => {
+    //   return await Appointment.create({appointmentId, userId, appointmentType, serviceType, appointmentDate, appointmentTime, comments})
+    // },
+    // updateServiceAppointment: async (parent, {appointmentId, appointmentDate, appointmentTime }) => {
+    //   return await Appointment.findOneAndUpdate({appointmentId: appointmentId }, { appointmentDate}, { appointmentTime}, { new: true });
+    // },
+    // deleteServiceAppointment: async (parent, { appointmentId }) => {
+    //   return await Appointment.findOneAndDelete({ appointmentId: appointmentId });
+    // }
   },
 };
 
