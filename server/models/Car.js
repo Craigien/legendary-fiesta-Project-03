@@ -2,10 +2,10 @@ const { Schema, Types, model } = require('mongoose');
 
 const carSchema = new Schema(
   {
-    carId: {
-      type: Schema.Types.ObjectId,
-      default: () => new Types.ObjectId(),
-    },
+    // carId: {
+    //   type: Schema.Types.ObjectId,
+    //   default: () => new Types.ObjectId(),
+    // },
     year: {
       type: String,
       required: true,

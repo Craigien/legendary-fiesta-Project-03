@@ -7,14 +7,10 @@ const appointmentSchema = new Schema(
         //     type: Schema.Types.ObjectId,
         //     default: () => new Types.ObjectId(),
         // },
-        carId: {
-            car: [{ type: Schema.Types.ObjectId, ref: 'car' }],
-            // required: false,
-        },
-        userId: {
-            user: [{ type: Schema.Types.ObjectId, ref: 'user' }],
-            // required: true,
-        },
+        carId: { type: Schema.Types.ObjectId, ref: 'car' },
+        // required: false,
+        userId: { type: Schema.Types.ObjectId, ref: 'user' },
+        // required: true,
         appointmentType: {
             type: String,
             required: true,

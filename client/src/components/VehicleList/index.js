@@ -17,7 +17,7 @@ const VehicleList = ({ cars, title }) => {
                         <div key={car._id}>
                             <h4>{car.year} {car.make} {car.model}</h4>
                             <div className="card">
-                                <img src={`../../images/${car.image}`} className="card-img-top" alt={car.model} />
+                                <img src={require( `../../images/${car.image}`)} className="card-img-top" alt={car.model} />
                                 <div className="card-body">
                                     <p className="card-text">${car.price}</p>
                                 </div>
