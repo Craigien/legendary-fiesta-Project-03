@@ -18,8 +18,8 @@ const typeDefs = gql`
 
   type Appointment {
     _id: ID
-    carId(carId: ID!): Car
-    userId(userId: ID!): User
+    carId: ID
+    userId: ID
     appointmentType: String
     appointmentDate: String
     appointmentTime: String

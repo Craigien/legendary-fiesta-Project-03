@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
+import { ADD_APPOINTMENT} from '../../utils/mutations';
 
 const AppointmentForm = ({ carId }) => {
     const [date, setDate] = useState('');
@@ -46,3 +47,5 @@ const AppointmentForm = ({ carId }) => {
     )
 
 }
+
+export default AppointmentForm;
