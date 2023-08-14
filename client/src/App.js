@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-} from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
@@ -39,7 +35,7 @@ function App() {
             />
 
             <Route
-              path="/categories/vehicles/carId"
+              path="/categories/vehicles/:carId"
               element={<Vehicle />}
             />
           </Routes>

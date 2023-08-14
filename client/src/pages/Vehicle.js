@@ -4,6 +4,8 @@ import { useQuery } from '@apollo/client';
 
 import { QUERY_SINGLE_VEHICLE } from '../utils/queries';
 
+import AppointmentForm from '../components/AppointmentForm';
+
 const Vehicle = () => {
     const { carId } = useParams();
 
@@ -12,6 +14,11 @@ const Vehicle = () => {
     });
 
     const car = data?.car || {};
+
+    if (!car)
+    {
+        return <h3>No Vehicle Found</h3>;
+    }
 
     if (loading) {
         return <div>Loading...</div>;
@@ -23,9 +30,24 @@ const Vehicle = () => {
             <div className="card">
                 <img src={`../../images/${car.image}`} className="card-img-top" alt={car.model} />
                 <div className="card-body">
-                    <p className="card-text">${car.price}</p>
+                    <ul style={{ listStyleType: 'none' }}>
+                        <li className="card-text">Price: ${car.price}</li>
+                        <hr />
+                        <li className="card-text">Monthly Payment: {car.monthlyPayment}</li>
+                        <hr />
+                        <li className="card-text">Condition: {car.condition}</li>
+                        <hr />
+                        <li className="card-text">Mileage: {car.mileage}</li>
+                        <hr />
+                        <li className="card-text">Color: {car.color}</li>
+                    </ul>
                 </div>
             </div>
+
+            <div>
+                <AppointmentForm carId={car._id} />
+            </div>
+
         </div>
     );
 };

@@ -13,7 +13,7 @@ const VehicleList = ({ cars, title }) => {
             <h3>{title}</h3>
             {cars &&
                 cars.map((car) => (
-                    <Link to={`/vehicles/${car._id}`}>
+                    <Link to={`/categories/vehicles/${car._id}`}>
                         <div key={car._id}>
                             <h4>{car.year} {car.make} {car.model}</h4>
                             <div className="card">
