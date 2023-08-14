@@ -16,6 +16,17 @@ const typeDefs = gql`
     image: String
   }
 
+  type Appointment {
+    _id: ID
+    carID: ID
+    userID: ID
+    appointmentType: String
+    serviceType: String
+    appointmentDate: Date
+    appointmentTime: String
+    comments: String
+  }
+
   type User {
     _id: ID
     email: String
@@ -38,6 +49,9 @@ const typeDefs = gql`
   type Mutation {
     addUser(email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    addAppointment(appointmentid: ID!, carID: ID!, userID: ID!, appointmentType: String!, serviceType: String!, appointmentDate: Date!, appointmentTime: String!, comments: String!): Appointment
+    updateAppointment(appointmentId: ID!, appointmentDate: Date!, appointmentTime: String!): Appointment
+    deleteAppointment(appointmentid: ID!): Appointment
   }
 `;
 

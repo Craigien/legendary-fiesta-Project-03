@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Car } = require('../models');
+const { User, Car, Appointment } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -54,7 +54,18 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+    addAppointment: async (parent, { appointmentId, carId, userId, appointmentType, serviceType, appointmentDate, appointmentTime, comments }) => {
+      // Create and return the new School object
+      return await Appointment.create({ appointmentId, carId, userId, appointmentType, serviceType, appointmentDate, appointmentTime, comments });
+    },
+    updateAppointment: async (parent, { appointmentId, appointmentDate, appointmentTime }) => {
+      // Find and update the matching class using the destructured args
+      return await Class.findOneAndUpdate({ appointmentId: appointmentId }, { appointmentDate }, { appointmentTime }, { new: true });
+    },
+    deleteAppointment: async (parent, { appointmentId }) => {
+      return Profile.findOneAndDelete({ appointmentid: appointmentId });
+    }
   },
 };
 
-module.exports = resolvers;
+  module.exports = resolvers;
