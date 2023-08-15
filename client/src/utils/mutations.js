@@ -25,7 +25,7 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_APPOINTMENT = gql`
-mutation addAppointment($carId: ID!, $userId: ID!, $appointmentType: String!, $appointmentDate: String!, $appointmentTime: String!, $comments: String!) {
+mutation AddAppointment($carId: ID!, $userId: ID!, $appointmentType: String!, $appointmentDate: String!, $appointmentTime: String!, $comments: String!) {
   addAppointment(carId: $carId, userId: $userId, appointmentType: $appointmentType, appointmentDate: $appointmentDate, appointmentTime: $appointmentTime, comments: $comments) {
     _id
     carId
@@ -33,5 +33,7 @@ mutation addAppointment($carId: ID!, $userId: ID!, $appointmentType: String!, $a
     appointmentType
     appointmentDate
     appointmentTime
+    comments
   }
-`
+}
+`;
