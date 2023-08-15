@@ -43,13 +43,14 @@ const typeDefs = gql`
     me: User
     cars: [Car]
     car(carId: ID!): Car
+    appointment(appointmentId: ID!): Appointment
   }
 
   type Mutation {
     addUser(email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addAppointment(carId: ID!, userId: ID!, appointmentType: String!,appointmentDate: String!, appointmentTime: String!, comments: String!): Appointment
-    updateAppointment(appointmentId: ID!, appointmentDate: String!, appointmentTime: String!): Appointment
+    updateAppointment(appointmentId: ID!, appointmentDate: String, appointmentTime: String): Appointment
     deleteAppointment(appointmentId: ID!): Appointment
   }
 `;

@@ -60,10 +60,10 @@ const resolvers = {
     },
     updateAppointment: async (parent, { appointmentId, appointmentDate, appointmentTime }) => {
       // Find and update the matching class using the destructured args
-      return await Appointment.findOneAndUpdate({ appointmentId: appointmentId }, { appointmentDate }, { appointmentTime }, { new: true });
+      return await Appointment.findOneAndUpdate({ _id: appointmentId }, { appointmentDate: appointmentDate, appointmentTime: appointmentTime}, { new: true });
     },
     deleteAppointment: async (parent, { appointmentId }) => {
-      return await Appointment.findOneAndDelete({ appointmentId: appointmentId });
+      return await Appointment.findOneAndDelete({ _id: appointmentId });
     },
     // addServiceAppointment: async (parent, { appointmentId, userId, appointmentType, serviceType, appointmentDate, appointmentTime, comments}) => {
     //   return await Appointment.create({appointmentId, userId, appointmentType, serviceType, appointmentDate, appointmentTime, comments})
