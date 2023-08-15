@@ -7,7 +7,7 @@ const AppointmentForm = ({ carId }) => {
     const [appointmentTime, setTime] = useState('');
     const [comments, setComments] = useState('');
 
-    const userId = "64db8ef1e57fa11bfc4b8ce1";
+    const userId = localStorage.getItem('userId');
     const appointmentType = "Test-drive";
 
     const [addAppointment, { error }] = useMutation(ADD_APPOINTMENT);

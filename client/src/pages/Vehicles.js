@@ -4,21 +4,22 @@ import { useQuery } from '@apollo/client';
 
 import VehicleList from '../components/VehicleList';
 
-import { QUERY_VEHICLES } from '../utils/queries';
+import { QUERY_VEHICLE_TYPE } from '../utils/queries';
 
 // Should return vehicle category from URL
-// const vehicleCategory = document.location().split('/categories/');
-const vehicleCategory = "all";
-
-// console.log("Vehicle Category: " + vehicleCategory);
+const vehicleCategory = window.location.href.split('/')[4];
+console.log("Vehicle Category: " + vehicleCategory);
 
 const Vehicles = () => {
 
     // Need to load vehicles associated with chosen category
-    const { loading, data } = useQuery(QUERY_VEHICLES);
-    const allCars = data?.cars || [];
+    const { loading, data } = useQuery(QUERY_VEHICLE_TYPE, {
+        variables: { type: vehicleCategory },
+    });
 
-    // console.log("All Vehicles: " + allVehicles);
+    const returnedCars = data?.carTypes || [];
+
+    console.log("allCars: " + returnedCars);
 
     return (
         <div>
@@ -26,8 +27,8 @@ const Vehicles = () => {
                 <div>Loading...</div>
             ) : (
                 <VehicleList
-                    cars = {allCars}
-                    title={`Available ${vehicleCategory}`}
+                    cars = {returnedCars}
+                    title={`Available ${vehicleCategory}s`}
                 />
             )}
         </div>

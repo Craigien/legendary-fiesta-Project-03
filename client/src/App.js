@@ -57,7 +57,23 @@ function App() {
               element={<Signup />}
             />
             <Route
-              path="/categories/vehicles"
+              path="/categories/Truck"
+              element={<Vehicles />}
+            />
+            <Route
+              path="/categories/SUV"
+              element={<Vehicles />}
+            />
+            <Route
+              path="/categories/Hatchback"
+              element={<Vehicles />}
+            />
+            <Route
+              path="/categories/Coupe"
+              element={<Vehicles />}
+            />
+            <Route
+              path="/categories/Sedan"
               element={<Vehicles />}
             />
             <Route
