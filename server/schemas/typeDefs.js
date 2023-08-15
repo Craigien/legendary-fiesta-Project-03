@@ -43,6 +43,7 @@ const typeDefs = gql`
     me: User
     cars: [Car]
     car(carId: ID!): Car
+    carTypes(type: String!): [Car]!
     appointment(appointmentId: ID!): Appointment
   }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const VehicleList = ({ cars, title }) => {
-    // console.log(cars);
+    console.log("Cars: " + cars);
 
     if (!cars.length) {
         return <h3>No Vehicles Found</h3>

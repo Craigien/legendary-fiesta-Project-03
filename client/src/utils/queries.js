@@ -45,6 +45,24 @@ export const QUERY_VEHICLES = gql`
   }
 `;
 
+export const QUERY_VEHICLE_TYPE = gql`
+query CarTypes($type: String!) {
+  carTypes(type: $type) {
+    _id
+    year
+    make
+    model
+    vehicleType
+    condition
+    price
+    monthlyPayment
+    mileage
+    color
+    image
+  }
+}
+`;
+
 export const QUERY_SINGLE_VEHICLE = gql`
 query Car($carId: ID!) {
   car(carId: $carId) {
