@@ -24,8 +24,7 @@ const appointmentSchema = new Schema(
             // default: Date.now(),
         },
         appointmentTime: {
-            type: String,
-            required: true,
+            type: String
         },
         comments: {
             type: String,
