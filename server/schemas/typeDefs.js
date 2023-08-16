@@ -20,7 +20,6 @@ const typeDefs = gql`
     _id: ID
     carId: ID
     userId: ID
-    appointmentType: String
     appointmentDate: String
     appointmentTime: String
     comments: String
@@ -51,14 +50,10 @@ const typeDefs = gql`
   type Mutation {
     addUser(email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addAppointment(carId: ID!, userId: ID!, appointmentType: String!,appointmentDate: String!, appointmentTime: String!, comments: String!): Appointment
+    addAppointment(carId: ID!, userId: ID!, appointmentDate: String!, appointmentTime: String!, comments: String!): Appointment
     updateAppointment(appointmentId: ID!, appointmentDate: String, appointmentTime: String): Appointment
     deleteAppointment(appointmentId: ID!): Appointment
   }
 `;
 
 module.exports = typeDefs;
-
-// addServiceAppointment(appointmentId: ID!, carId: ID!, userId: ID!, appointmentType: String!, serviceType: String!, appointmentDate: Date!, appointmentTime: String!, comments: String!): Appointment
-// updateServiceAppointment(appointmentId: ID!, appointmentDate: Date!, appointmentTime: String!): Appointment
-// deleteServiceAppointment(appointmentId: ID!): Appointment
