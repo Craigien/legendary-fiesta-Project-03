@@ -41,10 +41,14 @@ function App() {
       <Router>
         {/* <div className="flex-column justify-flex-start min-100-vh"> */}
         <Header />
-        <div className="container">
-          <div className="row align-items-start">
-            <Nav />
-          </div>
+        <div className="container-fluid">
+          <div className="row">
+          {/* <div className="row align-items-start"> */}
+            <aside className="col-3 mt-5">
+              <Nav />
+            </aside>
+          {/* </div> */}
+          <div className="col-6">
           <Routes>
             <Route
               path="/"
@@ -91,6 +95,8 @@ function App() {
               element={<ContactUs />}
             />
           </Routes>
+          </div>
+          </div>
         </div>
         <Footer />
         {/* </div> */}
