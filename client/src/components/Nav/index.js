@@ -35,7 +35,7 @@ const Nav = () => {
                         <Link className="nav-link" to="/service">Schedule Service</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/contact">Contact Us</Link>
+                        <Link className="nav-link" to="/contactus">Contact Us</Link>
                     </li>
                 </ul>
             </nav>

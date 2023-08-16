@@ -9,6 +9,7 @@ import Signup from './pages/Signup';
 import Appointments from './pages/Appointments';
 import Vehicles from './pages/Vehicles';
 import Vehicle from './pages/Vehicle';
+import ContactUs from './pages/ContactUs';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Nav from './components/Nav';
@@ -84,6 +85,10 @@ function App() {
             <Route
               path="/categories/vehicles/:carId"
               element={<Vehicle />}
+            />
+            <Route
+              path="contactus"
+              element={<ContactUs />}
             />
           </Routes>
         </div>
