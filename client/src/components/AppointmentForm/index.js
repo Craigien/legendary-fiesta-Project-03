@@ -8,7 +8,6 @@ const AppointmentForm = ({ carId }) => {
     const [comments, setComments] = useState('');
 
     const userId = localStorage.getItem('userId');
-    const appointmentType = "Test-drive";
 
     const [addAppointment, { error }] = useMutation(ADD_APPOINTMENT);
 
@@ -17,7 +16,7 @@ const AppointmentForm = ({ carId }) => {
 
         try {
             const { data } = await addAppointment({
-                variables: { carId, userId, appointmentType, appointmentDate, appointmentTime, comments },
+                variables: { carId, userId, appointmentDate, appointmentTime, comments },
             });
 
             window.location.reload();

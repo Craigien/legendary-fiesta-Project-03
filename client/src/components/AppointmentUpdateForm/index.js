@@ -16,6 +16,8 @@ const UpdateOrDeleteAppointmentForm = ({ id, date, time, comment }) => {
 
     const [updateAppointment, { error }] = useMutation(UPDATE_APPOINTMENT);
 
+    const [deleteAppointment, { error2 }] = useMutation(DELETE_APPOINTMENT);
+
     const handleFormSubmit = async (event) => {
         event.preventDefault();
 
@@ -31,8 +33,6 @@ const UpdateOrDeleteAppointmentForm = ({ id, date, time, comment }) => {
         }
     };
     
-    const [deleteAppointment, { error2 }] = useMutation(DELETE_APPOINTMENT);
-
     const handleDeleteAppointment = async (event) => {
         event.preventDefault();
 
@@ -71,7 +71,7 @@ const UpdateOrDeleteAppointmentForm = ({ id, date, time, comment }) => {
                     <div>Something went wrong</div>
                 )}
             </form>
-            <button onClick={() => handleDeleteAppointment} className="btn btn-secondary">Delete Appointment</button>
+            <button onClick={handleDeleteAppointment} className="btn btn-secondary">Delete Appointment</button>
 
         </div>
     );
