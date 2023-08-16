@@ -66,9 +66,9 @@ const resolvers = {
       // Create and return the new School object
       return await Appointment.create({ carId, userId, appointmentDate, appointmentTime, comments });
     },
-    updateAppointment: async (parent, { appointmentId, appointmentDate, appointmentTime }) => {
+    updateAppointment: async (parent, { appointmentId, appointmentDate, appointmentTime, comments }) => {
       // Find and update the matching class using the destructured args
-      return await Appointment.findOneAndUpdate({ _id: appointmentId }, { appointmentDate: appointmentDate, appointmentTime: appointmentTime}, { new: true });
+      return await Appointment.findOneAndUpdate({ _id: appointmentId }, { appointmentDate: appointmentDate, appointmentTime: appointmentTime, comments: comments }, { new: true });
     },
     deleteAppointment: async (parent, { appointmentId }) => {
       return await Appointment.findOneAndDelete({ _id: appointmentId });

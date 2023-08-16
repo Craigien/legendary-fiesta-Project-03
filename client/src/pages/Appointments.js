@@ -40,7 +40,7 @@ const AppointmentList = () => {
                         <h5>Appointment Date: {appointment.appointmentDate}</h5>
                         <h5>Appointment Time: {appointment.appointmentTime}</h5>
                         <p>Comments: {appointment.comments}</p>
-                        <hr />
+                        
                         <AppointmentUpdateForm
                             id={appointment._id}
                             date={appointment.appointmentDate}
@@ -48,6 +48,7 @@ const AppointmentList = () => {
                             comment={appointment.comments}
                         />
                         <hr />
+                        <br />
                     </div>
                 ))}
 
