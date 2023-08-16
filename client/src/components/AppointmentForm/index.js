@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { ADD_APPOINTMENT} from '../../utils/mutations';
+import { ADD_APPOINTMENT } from '../../utils/mutations';
 
 const AppointmentForm = ({ carId }) => {
     const [appointmentDate, setDate] = useState('');
@@ -28,6 +28,8 @@ const AppointmentForm = ({ carId }) => {
     return (
         <div>
             <h4>Create an appointment for a test drive</h4>
+
+            
 
             <form onSubmit={handleFormSubmit}>
                 <div className="mb-3">

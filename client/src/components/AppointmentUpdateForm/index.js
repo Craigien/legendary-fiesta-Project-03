@@ -24,7 +24,7 @@ const UpdateOrDeleteAppointmentForm = ({ id, date, time, comment }) => {
         try {
             const { data } = await updateAppointment({
                 // Need to add comments to available fields to update
-                variables: { appointmentId, appointmentDate, appointmentTime },
+                variables: { appointmentId, appointmentDate, appointmentTime, comments },
             });
 
             window.location.reload();
@@ -49,9 +49,13 @@ const UpdateOrDeleteAppointmentForm = ({ id, date, time, comment }) => {
 
     return (
         <div>
-            <h4>Update or delete this appointment</h4>
+            <h5>Update or delete this appointment</h5>
 
-            <form onSubmit={handleFormSubmit}>
+            <button className="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#collapseForm" aria-expanded="false" aria-controls="collapseForm">
+                Update or Delete
+            </button>
+
+            <form className="collapse" id="collapseForm" onSubmit={handleFormSubmit}>
                 <div className="mb-3">
                     <label htmlFor="dateInput" className="form-label">Please select desired date for test drive</label>
                     <input type="date" className="form-control" id="dateInput" value={appointmentDate} onChange={(event) => setDate(event.target.value)} />
@@ -66,13 +70,12 @@ const UpdateOrDeleteAppointmentForm = ({ id, date, time, comment }) => {
                     <textarea type="text" className="form-control" id="commentsInput" placeholder="Please leave any comments here" value={comments} onChange={(event) => setComments(event.target.value)} />
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
-                
+                <button onClick={handleDeleteAppointment} className="btn btn-secondary">Delete Appointment</button>
                 {(error || error2) && (
                     <div>Something went wrong</div>
                 )}
             </form>
-            <button onClick={handleDeleteAppointment} className="btn btn-secondary">Delete Appointment</button>
-
+            
         </div>
     );
 };

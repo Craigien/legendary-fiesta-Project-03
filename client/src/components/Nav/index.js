@@ -32,7 +32,7 @@ const Nav = () => {
                         </ul>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/service">Schedule Service</Link>
+                        <Link className="nav-link" to="/appointments">View Appointments</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/contactus">Contact Us</Link>

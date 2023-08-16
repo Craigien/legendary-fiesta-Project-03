@@ -51,7 +51,7 @@ const typeDefs = gql`
     addUser(email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addAppointment(carId: ID!, userId: ID!, appointmentDate: String!, appointmentTime: String!, comments: String!): Appointment
-    updateAppointment(appointmentId: ID!, appointmentDate: String, appointmentTime: String): Appointment
+    updateAppointment(appointmentId: ID!, appointmentDate: String, appointmentTime: String, comments: String): Appointment
     deleteAppointment(appointmentId: ID!): Appointment
   }
 `;

@@ -87,7 +87,6 @@ query AppointmentsByUser($userId: String!) {
     _id
     carId
     userId
-    appointmentType
     appointmentDate
     appointmentTime
     comments
