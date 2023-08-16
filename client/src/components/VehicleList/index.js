@@ -11,15 +11,34 @@ const VehicleList = ({ cars, title }) => {
     return (
         <div>
             <h3>{title}</h3>
-            {cars &&
+            {/* {cars &&
                 cars.map((car) => (
                     <Link to={`/categories/vehicles/${car._id}`}>
                         <div key={car._id}>
                             <h4>{car.year} {car.make} {car.model}</h4>
                             <div className="card">
-                                <img src={require( `../../images/${car.image}`)} className="card-img-top" alt={car.model} />
+                                <img src={require(`../../images/${car.image}`)} className="card-img-top" alt={car.model} />
                                 <div className="card-body">
                                     <p className="card-text">${car.price}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </Link>
+                ))} */}
+
+            {cars &&
+                cars.map((car) => (
+                    <Link to={`/categories/vehicles/${car._id}`} key={car._id}>
+                        <div className="card mb-3" style={{ maxWidth: "1080px" }}>
+                            <div className="row no-gutters">
+                                <div className="col-md-4">
+                                    <img src={require(`../../images/${car.image}`)} className="card-img" alt={car.model} />
+                                </div>
+                                <div className="col-md-8">
+                                    <div className="card-body">
+                                        <h5 className="card-title">{car.year} {car.make} {car.model}</h5>
+                                        <p className="card-text">Price: ${car.price}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -30,5 +49,3 @@ const VehicleList = ({ cars, title }) => {
 };
 
 export default VehicleList;
-
-// Images are causing GET request
