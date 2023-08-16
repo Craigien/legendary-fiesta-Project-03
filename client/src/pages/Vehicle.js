@@ -15,8 +15,7 @@ const Vehicle = () => {
 
     const car = data?.car || {};
 
-    if (!car)
-    {
+    if (!car) {
         return <h3>No Vehicle Found</h3>;
     }
 
@@ -25,31 +24,34 @@ const Vehicle = () => {
     }
 
     return (
-        <div>
+        <div className="container">
             <h3>{car.year} {car.make} {car.model}</h3>
-            <div className="card">
-                <img src={require(`../images/${car.image}`)} className="card-img-top %" alt={car.model} style={{width: '50%', height: '30%' }} />
-                <div className="card-body">
-                    <ul style={{ listStyleType: 'none' }}>
-                        <li className="card-text">Price: ${car.price}</li>
-                        <hr />
-                        <li className="card-text">Monthly Payment: {car.monthlyPayment}</li>
-                        <hr />
-                        <li className="card-text">Condition: {car.condition}</li>
-                        <hr />
-                        <li className="card-text">Mileage: {car.mileage}</li>
-                        <hr />
-                        <li className="card-text">Color: {car.color}</li>
-                    </ul>
+                <div className="card">
+                    <div className="row">
+                        <div className="col-6">
+                            <img src={require(`../images/${car.image}`)} className="card-img-top %" alt={car.model} />
+                        </div>
+                        <div className="card-body col-6">
+                            <ul style={{ listStyleType: 'none' }}>
+                                <li className="card-text">Price: ${car.price}</li>
+                                <hr />
+                                <li className="card-text">Monthly Payment: {car.monthlyPayment}</li>
+                                <hr />
+                                <li className="card-text">Condition: {car.condition}</li>
+                                <hr />
+                                <li className="card-text">Mileage: {car.mileage}</li>
+                                <hr />
+                                <li className="card-text">Color: {car.color}</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <div className="row p-2">
+                        <AppointmentForm carId={car._id} />
+                    </div>
                 </div>
-            </div>
-
-            <br />
-
-            <div>
-                <AppointmentForm carId={car._id} />
-            </div>
-
         </div>
     );
 };
