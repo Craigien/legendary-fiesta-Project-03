@@ -62,9 +62,9 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addAppointment: async (parent, { carId, userId, appointmentType, appointmentDate, appointmentTime, comments }) => {
+    addAppointment: async (parent, { carId, userId, appointmentDate, appointmentTime, comments }) => {
       // Create and return the new School object
-      return await Appointment.create({ carId, userId, appointmentType, appointmentDate, appointmentTime, comments });
+      return await Appointment.create({ carId, userId, appointmentDate, appointmentTime, comments });
     },
     updateAppointment: async (parent, { appointmentId, appointmentDate, appointmentTime }) => {
       // Find and update the matching class using the destructured args
