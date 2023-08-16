@@ -51,11 +51,11 @@ const UpdateOrDeleteAppointmentForm = ({ id, date, time, comment }) => {
         <div>
             <h5>Update or delete this appointment</h5>
 
-            <button className="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#collapseForm" aria-expanded="false" aria-controls="collapseForm">
+            <button className="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target={`#collapseForm-${id}`} aria-expanded="false" aria-controls={`#collapseForm-${id}`}>
                 Update or Delete
             </button>
 
-            <form className="collapse" id="collapseForm" onSubmit={handleFormSubmit}>
+            <form className="collapse" id={`collapseForm-${id}`} onSubmit={handleFormSubmit}>
                 <div className="mb-3">
                     <label htmlFor="dateInput" className="form-label">Please select desired date for test drive</label>
                     <input type="date" className="form-control" id="dateInput" value={appointmentDate} onChange={(event) => setDate(event.target.value)} />

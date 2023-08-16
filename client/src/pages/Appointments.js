@@ -1,14 +1,12 @@
 import React from 'react';
 
-// import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 import AppointmentUpdateForm from '../components/AppointmentUpdateForm';
 
-// import { QUERY_SINGLE_USER, QUERY_ME } from '../utils/queries';
 import { QUERY_APPOINTMENTS_BY_USER } from '../utils/queries';
 
-// import Auth from '../utils/auth';
+import Auth from '../utils/auth';
 
 const AppointmentList = () => {
     // Need to query all appointments with userId
@@ -22,6 +20,11 @@ const AppointmentList = () => {
 
     if (!appointments) {
         return <h3>You do not have any scheduled appointments</h3>;
+    }
+
+    if (!Auth.loggedIn())
+    {
+        return <h3>Please login to view appointments</h3>
     }
 
     if (loading) {

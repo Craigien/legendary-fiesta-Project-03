@@ -44,7 +44,7 @@ function App() {
         <div className="container-fluid">
           <div className="row">
           {/* <div className="row align-items-start"> */}
-            <aside className="col-3 mt-5">
+            <aside className="col-md-3 col-sm-8 mt-5 pt-2">
               <Nav />
             </aside>
           {/* </div> */}

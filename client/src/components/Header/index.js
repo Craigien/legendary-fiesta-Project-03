@@ -9,30 +9,42 @@ const Header = () => {
         Auth.logout();
     };
     return (
-        <header className="bg-info text-dark mb-4 py-3 display-flex align-center">
-            <div className="container flex-column justify-space-between-lg justify-center align-center text-center">
-                <Link className="text-dark" to="/">
-                    <h1 className="m-0" style={{ fontSize: '3rem',  textDecoration: "none"}}>
-                        Car Dealership Header Placeholder
-                    </h1>
-                </Link>
+        <header className="bg-primary mb-4 py-3 display-flex align-center">
+            <div className="container-flex">
+                <div className="row">
+                    <div className="col-2"></div>
+                    <div className="col-8">
+                        <Link className="text-white" to="/" style={{ textDecoration: "none" }}>
+                            <h1 className="m-0 text-center" style={{ fontSize: '3rem' }}>
+                                C&M Dealerships
+                            </h1>
+                        </Link>
+                    </div>
 
-                <div>
-                    {Auth.loggedIn() ? (
-                        <>
-                            <button className="btn btn-lg btn-light m-2" onClick={logout}>
-                                Logout
-                            </button>
-                        </>
-                    ) : (
-                        <>
-                            <Link className="btn btn-lg btn-primary m-2" to="/login">
-                                Login or Sign Up
-                            </Link>
-                        </>
-                    )}
+                    <div className="col-md-2 col-sm-8">
+                        {Auth.loggedIn() ? (
+                            <>
+                                <button className="btn btn-lg btn-light m-2" onClick={logout}>
+                                    Logout
+                                </button>
+                            </>
+                        ) : (
+                            <>
+                                <Link className="btn btn-lg btn-light m-2" to="/login">
+                                    Login
+                                </Link>
+                                <Link className="btn btn-lg btn-light m-2" to="/signup">
+                                    Sign Up
+                                </Link>
+                            </>
+                        )}
+                    </div>
                 </div>
             </div>
+
+            <br />
+            <br />
+
         </header>
     );
 };
