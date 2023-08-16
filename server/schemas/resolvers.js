@@ -73,15 +73,6 @@ const resolvers = {
     deleteAppointment: async (parent, { appointmentId }) => {
       return await Appointment.findOneAndDelete({ _id: appointmentId });
     },
-    // addServiceAppointment: async (parent, { appointmentId, userId, appointmentType, serviceType, appointmentDate, appointmentTime, comments}) => {
-    //   return await Appointment.create({appointmentId, userId, appointmentType, serviceType, appointmentDate, appointmentTime, comments})
-    // },
-    // updateServiceAppointment: async (parent, {appointmentId, appointmentDate, appointmentTime }) => {
-    //   return await Appointment.findOneAndUpdate({appointmentId: appointmentId }, { appointmentDate}, { appointmentTime}, { new: true });
-    // },
-    // deleteServiceAppointment: async (parent, { appointmentId }) => {
-    //   return await Appointment.findOneAndDelete({ appointmentId: appointmentId });
-    // }
   },
 };
 
