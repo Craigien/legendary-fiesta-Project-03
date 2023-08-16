@@ -163,7 +163,7 @@
         "condition": "Used",
         "price": 42450,
         "monthlyPayment": 870,
-        "mileage": 0,
+        "mileage": 2150,
         "color": "silver",
         "image": "lexus-rc-350.jpg"
     },
@@ -175,7 +175,7 @@
         "condition": "Used",
         "price": 15000,
         "monthlyPayment": 300,
-        "mileage": 0,
+        "mileage": 145230,
         "color": "silver",
         "image": "ford-mustang.jpg"
     },
@@ -211,7 +211,7 @@
         "condition": "Used",
         "price": 20000,
         "monthlyPayment": 330,
-        "mileage": 0,
+        "mileage": 36210,
         "color": "white",
         "image": "nissan-altima.jpg"
     },
@@ -223,7 +223,7 @@
         "condition": "Used",
         "price": 20800,
         "monthlyPayment": 420,
-        "mileage": 0,
+        "mileage": 21910,
         "color": "blue",
         "image": "ford-fusion.jpg"
     },
@@ -235,7 +235,7 @@
         "condition": "Used",
         "price": 18600,
         "monthlyPayment": 385,
-        "mileage": 0,
+        "mileage": 12980,
         "color": "black",
         "image" : "chevrolet-malibu.jpg"
     },
@@ -259,7 +259,7 @@
         "condition": "Used",
         "price": 7600,
         "monthlyPayment": 125,
-        "mileage": 0,
+        "mileage": 14970,
         "color": "blue",
         "image": "toyota-prius.jpg"
     },
@@ -283,7 +283,7 @@
         "condition": "Used",
         "price": "18900",
         "monthlyPayment": 400,
-        "mileage": 0,
+        "mileage": 42310,
         "color": "yellow",
         "image": "ford-focus.jpg"
     },
@@ -295,7 +295,7 @@
         "condition": "Used",
         "price": 23900,
         "monthlyPayment": 500,
-        "mileage": 0,
+        "mileage": 19820,
         "color": "white",
         "image": "mazda-3.jpg"
     }
