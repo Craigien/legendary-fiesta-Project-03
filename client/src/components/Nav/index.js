@@ -15,19 +15,19 @@ const Nav = () => {
                         <Link className="nav-link" to="/categories">View Inventory</Link>
                         <ul className="list-group">
                             <li className="list-group-item">
-                                <Link to="/categories/coupes">Coupes</Link>
+                                <Link to="/categories/Coupe">Coupes</Link>
                             </li>
                             <li className="list-group-item">
-                                <Link to="/categories/sedans">Sedans</Link>
+                                <Link to="/categories/Sedan">Sedans</Link>
                             </li>
                             <li className="list-group-item">
-                                <Link to="/categories/suvs">SUVs</Link>
+                                <Link to="/categories/SUV">SUVs</Link>
                             </li>
                             <li className="list-group-item">
-                                <Link to="/categories/hatchbacks">Hatchbacks</Link>
+                                <Link to="/categories/Hatchback">Hatchbacks</Link>
                             </li>
                             <li className="list-group-item">
-                                <Link to="/categories/trucks">Trucks</Link>
+                                <Link to="/categories/Truck">Trucks</Link>
                             </li>
                         </ul>
                     </li>

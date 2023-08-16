@@ -37,3 +37,21 @@ mutation AddAppointment($carId: ID!, $userId: ID!, $appointmentType: String!, $a
   }
 }
 `;
+
+export const UPDATE_APPOINTMENT = gql`
+mutation UpdateAppointment($appointmentId: ID!, $appointmentDate: String, $appointmentTime: String) {
+  updateAppointment(appointmentId: $appointmentId, appointmentDate: $appointmentDate, appointmentTime: $appointmentTime) {
+    _id
+    appointmentDate
+    appointmentTime
+  }
+}
+`;
+
+export const DELETE_APPOINTMENT = gql`
+mutation DeleteAppointment($appointmentId: ID!) {
+  deleteAppointment(appointmentId: $appointmentId) {
+    _id
+  }
+}
+`;

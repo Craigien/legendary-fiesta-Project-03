@@ -1,23 +1,44 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { ADD_APPOINTMENT} from '../../utils/mutations';
 
-const AppointmentForm = ({ carId }) => {
-    const [appointmentDate, setDate] = useState('');
-    const [appointmentTime, setTime] = useState('');
-    const [comments, setComments] = useState('');
+// import { QUERY_APPOINTMENTS_BY_USER } from '../../utils/queries';
+import { UPDATE_APPOINTMENT } from '../../utils/mutations';
+import { DELETE_APPOINTMENT } from '../../utils/mutations';
 
-    const userId = localStorage.getItem('userId');
-    const appointmentType = "Test-drive";
 
-    const [addAppointment, { error }] = useMutation(ADD_APPOINTMENT);
+
+const UpdateOrDeleteAppointmentForm = ({ id, date, time, comment }) => {
+    const [appointmentDate, setDate] = useState(date);
+    const [appointmentTime, setTime] = useState(time);
+    const [comments, setComments] = useState(comment);
+
+    const appointmentId = id;
+
+    const [updateAppointment, { error }] = useMutation(UPDATE_APPOINTMENT);
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
 
         try {
-            const { data } = await addAppointment({
-                variables: { carId, userId, appointmentType, appointmentDate, appointmentTime, comments },
+            const { data } = await updateAppointment({
+                // Need to add comments to available fields to update
+                variables: { appointmentId, appointmentDate, appointmentTime },
+            });
+
+            window.location.reload();
+        } catch (err) {
+            console.error(err);
+        }
+    };
+    
+    const [deleteAppointment, { error2 }] = useMutation(DELETE_APPOINTMENT);
+
+    const handleDeleteAppointment = async (event) => {
+        event.preventDefault();
+
+        try {
+            const { data } = deleteAppointment({
+                variables: { appointmentId },
             });
 
             window.location.reload();
@@ -28,7 +49,7 @@ const AppointmentForm = ({ carId }) => {
 
     return (
         <div>
-            <h4>Create an appointment for a test drive</h4>
+            <h4>Update or delete this appointment</h4>
 
             <form onSubmit={handleFormSubmit}>
                 <div className="mb-3">
@@ -45,13 +66,15 @@ const AppointmentForm = ({ carId }) => {
                     <textarea type="text" className="form-control" id="commentsInput" placeholder="Please leave any comments here" value={comments} onChange={(event) => setComments(event.target.value)} />
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
-                {error && (
+                
+                {(error || error2) && (
                     <div>Something went wrong</div>
                 )}
             </form>
+            <button onClick={() => handleDeleteAppointment} className="btn btn-secondary">Delete Appointment</button>
 
         </div>
     );
 };
 
-export default AppointmentForm;
+export default UpdateOrDeleteAppointmentForm;
