@@ -3,10 +3,6 @@ const bcrypt = require('bcrypt');
 
 const userSchema = new Schema(
   {
-    // userId: {
-    //   type: Schema.Types.ObjectId,
-    //   default: () => new Types.ObjectId(),
-    // },
     email: {
       type: String,
       required: true,
@@ -18,12 +14,6 @@ const userSchema = new Schema(
       minlength: 6,
     },
   },
-  // {
-  //   toJSON: {
-  //     getters: true,
-  //   },
-  //   id: false,
-  // }
 );
 
 userSchema.pre('save', async function (next) {
