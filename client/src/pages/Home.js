@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <main>
       <div>
-       <h1>Page Header Placeholder</h1>
+       <h1>Welcome to the Dealership</h1>
       </div>
     </main>
   );

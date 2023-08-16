@@ -80,3 +80,17 @@ query Car($carId: ID!) {
   }
 }
 `;
+
+export const QUERY_APPOINTMENTS_BY_USER = gql`
+query AppointmentsByUser($userId: String!) {
+  appointmentsByUser(userId: $userId) {
+    _id
+    carId
+    userId
+    appointmentType
+    appointmentDate
+    appointmentTime
+    comments
+  }
+}
+`;

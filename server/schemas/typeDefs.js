@@ -45,6 +45,7 @@ const typeDefs = gql`
     car(carId: ID!): Car
     carTypes(type: String!): [Car]!
     appointment(appointmentId: ID!): Appointment
+    appointmentsByUser(userId: String!): [Appointment]
   }
 
   type Mutation {

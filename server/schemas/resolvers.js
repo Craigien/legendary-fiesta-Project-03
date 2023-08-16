@@ -33,6 +33,10 @@ const resolvers = {
     carTypes: async (parent, { type }) => {
       return Car.find({vehicleType: type});
     },
+
+    appointmentsByUser: async (parent, { userId }) => {
+      return Appointment.find({userId: userId})
+    },
   },
   // Add user to database
   Mutation: {
