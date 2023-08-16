@@ -6,7 +6,6 @@ const Nav = () => {
     const isLoggedIn = localStorage.getItem('id_token');
 
     return (
-        <aside className="col">
             <nav>
                 <ul className="nav flex-column">
                     <li className="nav-item">
@@ -45,7 +44,6 @@ const Nav = () => {
                     </li>
                 </ul>
             </nav>
-        </aside>
     );
 };
 
