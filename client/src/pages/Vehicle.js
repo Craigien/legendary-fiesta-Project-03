@@ -44,6 +44,8 @@ const Vehicle = () => {
                 </div>
             </div>
 
+            <br />
+
             <div>
                 <AppointmentForm carId={car._id} />
             </div>

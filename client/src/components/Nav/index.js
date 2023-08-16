@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 const Nav = () => {
 
+    const isLoggedIn = localStorage.getItem('id_token');
+
     return (
         <aside className="col">
             <nav>
@@ -33,9 +35,11 @@ const Nav = () => {
                             </ul>
                         </div>
                     </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/appointments">View Appointments</Link>
-                    </li>
+                    {isLoggedIn && (
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/appointments">View Appointments</Link>
+                        </li>
+                    )}
                     <li className="nav-item">
                         <Link className="nav-link" to="/contactus">Contact Us</Link>
                     </li>
