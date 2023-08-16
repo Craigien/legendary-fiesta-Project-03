@@ -28,7 +28,7 @@ const Vehicle = () => {
         <div>
             <h3>{car.year} {car.make} {car.model}</h3>
             <div className="card">
-                <img src={require(`../images/${car.image}`)} className="card-img-top" alt={car.model} />
+                <img src={require(`../images/${car.image}`)} className="card-img-top %" alt={car.model} style={{width: '50%', height: '30%' }} />
                 <div className="card-body">
                     <ul style={{ listStyleType: 'none' }}>
                         <li className="card-text">Price: ${car.price}</li>
