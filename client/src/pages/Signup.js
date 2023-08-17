@@ -27,14 +27,13 @@ const Signup = () => {
   // Submit form to create new account
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
 
     try {
       const { data } = await addUser({
         variables: { ...formState },
       });
 
-      Auth.login(data.addUser.token);
+      Auth.login(data.addUser.token, data.addUser.user._id);
     } catch (e) {
       console.error(e);
     }
