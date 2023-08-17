@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 
-// import { QUERY_APPOINTMENTS_BY_USER } from '../../utils/queries';
 import { UPDATE_APPOINTMENT } from '../../utils/mutations';
 import { DELETE_APPOINTMENT } from '../../utils/mutations';
 
-
-
+// Creates form that will allow user to update or delete existing appointments
 const UpdateOrDeleteAppointmentForm = ({ id, date, time, comment }) => {
     const [appointmentDate, setDate] = useState(date);
     const [appointmentTime, setTime] = useState(time);
@@ -14,16 +12,18 @@ const UpdateOrDeleteAppointmentForm = ({ id, date, time, comment }) => {
 
     const appointmentId = id;
 
+    // Use UPDATE_APPOINTMENT mutation to update appointment
     const [updateAppointment, { error }] = useMutation(UPDATE_APPOINTMENT);
 
+    // Use DELETE_APPOINTMENT mutation to delete appointment
     const [deleteAppointment, { error2 }] = useMutation(DELETE_APPOINTMENT);
 
+    // Update appointment in database using form entries and ID
     const handleFormSubmit = async (event) => {
         event.preventDefault();
 
         try {
             const { data } = await updateAppointment({
-                // Need to add comments to available fields to update
                 variables: { appointmentId, appointmentDate, appointmentTime, comments },
             });
 
@@ -33,6 +33,7 @@ const UpdateOrDeleteAppointmentForm = ({ id, date, time, comment }) => {
         }
     };
     
+    // Delete appointment from database usting ID
     const handleDeleteAppointment = async (event) => {
         event.preventDefault();
 
@@ -47,6 +48,7 @@ const UpdateOrDeleteAppointmentForm = ({ id, date, time, comment }) => {
         }
     };
 
+    // Display update or delete appointment form
     return (
         <div>
             <h5>Update or delete this appointment</h5>
@@ -69,7 +71,7 @@ const UpdateOrDeleteAppointmentForm = ({ id, date, time, comment }) => {
                     <label htmlFor="commentsInput" className="form-label">Please leave any comments here</label>
                     <textarea type="text" className="form-control" id="commentsInput" placeholder="Please leave any comments here" value={comments} onChange={(event) => setComments(event.target.value)} />
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary me-1">Submit</button>
                 <button onClick={handleDeleteAppointment} className="btn btn-secondary">Delete Appointment</button>
                 {(error || error2) && (
                     <div>Something went wrong</div>

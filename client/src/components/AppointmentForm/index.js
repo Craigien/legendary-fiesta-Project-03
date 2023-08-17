@@ -4,15 +4,18 @@ import { ADD_APPOINTMENT } from '../../utils/mutations';
 
 import Auth from '../../utils/auth';
 
+// Creates form that will use ADD_APPOINTMENT mutation to add data to database
 const AppointmentForm = ({ carId }) => {
     const [appointmentDate, setDate] = useState('');
     const [appointmentTime, setTime] = useState('');
     const [comments, setComments] = useState('');
 
+    // Retrieve userId from localStorage to use when adding new appointment
     const userId = localStorage.getItem('userId');
 
     const [addAppointment, { error }] = useMutation(ADD_APPOINTMENT);
 
+    // Add appointment to database passing in form entries and IDs
     const handleFormSubmit = async (event) => {
         event.preventDefault();
 
@@ -31,6 +34,7 @@ const AppointmentForm = ({ carId }) => {
         return <h4>Please login to create an appointment for a test drive</h4>;
     }
 
+    // Display add appointment form
     return (
         <div>
             {Auth.loggedIn() && (

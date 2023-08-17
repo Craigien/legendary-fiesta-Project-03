@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+// Displays footer and back button
 const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ const Footer = () => {
             &larr; Go Back
           </button>
         )}
-        <h4>&copy; {new Date().getFullYear()} - Copyright 2023</h4>
+        <h4> Copyright &copy; {new Date().getFullYear()} C&M inc.</h4>
       </div>
     </footer>
   );

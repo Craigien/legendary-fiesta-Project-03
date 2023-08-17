@@ -1,5 +1,6 @@
 import { gql } from '@apollo/client';
 
+// Get all users from database
 export const QUERY_USER = gql`
   query allUsers {
     user {
@@ -9,6 +10,7 @@ export const QUERY_USER = gql`
   }
 `;
 
+// Get one user from database
 export const QUERY_SINGLE_USER = gql`
   query singleUser($userId: ID!) {
     user(userId: $userId) {
@@ -18,6 +20,7 @@ export const QUERY_SINGLE_USER = gql`
   }
 `;
 
+// Get the currently logged in user from database
 export const QUERY_ME = gql`
   query me {
     me {
@@ -27,6 +30,7 @@ export const QUERY_ME = gql`
   }
 `;
 
+// Get all vehicles from database
 export const QUERY_VEHICLES = gql`
   query Cars {
     cars {
@@ -45,6 +49,7 @@ export const QUERY_VEHICLES = gql`
   }
 `;
 
+// Get all vehicles based on vehicle type from database
 export const QUERY_VEHICLE_TYPE = gql`
 query CarTypes($type: String!) {
   carTypes(type: $type) {
@@ -63,6 +68,7 @@ query CarTypes($type: String!) {
 }
 `;
 
+// Get single vehicle from database
 export const QUERY_SINGLE_VEHICLE = gql`
 query Car($carId: ID!) {
   car(carId: $carId) {
@@ -81,6 +87,7 @@ query Car($carId: ID!) {
 }
 `;
 
+// Get all appointments for specified user from database
 export const QUERY_APPOINTMENTS_BY_USER = gql`
 query AppointmentsByUser($userId: String!) {
   appointmentsByUser(userId: $userId) {

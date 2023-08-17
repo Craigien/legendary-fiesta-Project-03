@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 
 import Auth from '../../utils/auth';
 
+// Display nav
 const Nav = () => {
 
+    // Display nav with collapsible inventory pages
     return (
             <nav className="border border-dark rounded">
                 <ul className="nav flex-column">
@@ -34,6 +36,7 @@ const Nav = () => {
                             </ul>
                         </div>
                     </li>
+                    {/* Option to view appointments will only display if user is logged in */}
                     {Auth.loggedIn() && (
                         <li className="nav-item">
                             <Link className="nav-link" to="/appointments">View Appointments</Link>

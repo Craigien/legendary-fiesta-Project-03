@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom';
 
 import Auth from '../../utils/auth';
 
+// Display header with organization name and buttons
 const Header = () => {
     const logout = (event) => {
         event.preventDefault();
         Auth.logout();
     };
+
+    // Display organization name and either login and signup or logout buttons depending on user login status
     return (
         <header className="bg-primary mb-4 py-3 display-flex align-center">
             <div className="container-flex">

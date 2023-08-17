@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// Displays list of vehicles depending on the vehicle type selected
 const VehicleList = ({ cars, title }) => {
-    console.log("Cars: " + cars);
 
     if (!cars.length) {
         return <h3>No Vehicles Found</h3>
     }
 
+    // Display list of vehicles
     return (
         <div>
             <h3>{title}</h3>

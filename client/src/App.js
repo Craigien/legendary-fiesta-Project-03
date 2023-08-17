@@ -35,71 +35,70 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+// Display page with all route options
 function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        {/* <div className="flex-column justify-flex-start min-100-vh"> */}
         <Header />
-        <div className="container-fluid">
-          <div className="row">
-          {/* <div className="row align-items-start"> */}
-            <aside className="col-md-3 col-sm-8 mt-5 pt-2">
-              <Nav />
-            </aside>
-          {/* </div> */}
-          <div className="col-6">
-          <Routes>
-            <Route
-              path="/"
-              element={<Home />}
-            />
-            <Route
-              path="/login"
-              element={<Login />}
-            />
-            <Route
-              path="/signup"
-              element={<Signup />}
-            />
-            <Route
-              path="/appointments"
-              element={<Appointments />}
-            />
-            <Route
-              path="/categories/Truck"
-              element={<Vehicles />}
-            />
-            <Route
-              path="/categories/SUV"
-              element={<Vehicles />}
-            />
-            <Route
-              path="/categories/Hatchback"
-              element={<Vehicles />}
-            />
-            <Route
-              path="/categories/Coupe"
-              element={<Vehicles />}
-            />
-            <Route
-              path="/categories/Sedan"
-              element={<Vehicles />}
-            />
-            <Route
-              path="/categories/vehicles/:carId"
-              element={<Vehicle />}
-            />
-            <Route
-              path="contactus"
-              element={<ContactUs />}
-            />
-          </Routes>
+        <main>
+          <div className="container-fluid">
+            <div className="row">
+              <aside className="col-md-3 col-sm-8 mt-5 pt-2">
+                <Nav />
+              </aside>
+              <div className="col-6">
+                <Routes>
+                  <Route
+                    path="/"
+                    element={<Home />}
+                  />
+                  <Route
+                    path="/login"
+                    element={<Login />}
+                  />
+                  <Route
+                    path="/signup"
+                    element={<Signup />}
+                  />
+                  <Route
+                    path="/appointments"
+                    element={<Appointments />}
+                  />
+                  <Route
+                    path="/categories/Truck"
+                    element={<Vehicles />}
+                  />
+                  <Route
+                    path="/categories/SUV"
+                    element={<Vehicles />}
+                  />
+                  <Route
+                    path="/categories/Hatchback"
+                    element={<Vehicles />}
+                  />
+                  <Route
+                    path="/categories/Coupe"
+                    element={<Vehicles />}
+                  />
+                  <Route
+                    path="/categories/Sedan"
+                    element={<Vehicles />}
+                  />
+                  <Route
+                    path="/categories/vehicles/:carId"
+                    element={<Vehicle />}
+                  />
+                  <Route
+                    path="contactus"
+                    element={<ContactUs />}
+                  />
+                </Routes>
+              </div>
+            </div>
           </div>
-          </div>
-        </div>
+        </main>
         <Footer />
-        {/* </div> */}
       </Router>
     </ApolloProvider>
   );
