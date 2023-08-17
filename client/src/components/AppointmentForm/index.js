@@ -2,16 +2,20 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_APPOINTMENT } from '../../utils/mutations';
 
+import Auth from '../../utils/auth';
+
+// Creates form that will use ADD_APPOINTMENT mutation to add data to database
 const AppointmentForm = ({ carId }) => {
     const [appointmentDate, setDate] = useState('');
     const [appointmentTime, setTime] = useState('');
     const [comments, setComments] = useState('');
 
-    const isLoggedIn = localStorage.getItem('id_token');
+    // Retrieve userId from localStorage to use when adding new appointment
     const userId = localStorage.getItem('userId');
 
     const [addAppointment, { error }] = useMutation(ADD_APPOINTMENT);
 
+    // Add appointment to database passing in form entries and IDs
     const handleFormSubmit = async (event) => {
         event.preventDefault();
 
@@ -26,17 +30,18 @@ const AppointmentForm = ({ carId }) => {
         }
     };
 
-    if (!isLoggedIn) {
+    if (!Auth.loggedIn()) {
         return <h4>Please login to create an appointment for a test drive</h4>;
     }
 
+    // Display add appointment form
     return (
         <div>
-            {isLoggedIn && (
+            {Auth.loggedIn() && (
                 <h4>Create an appointment for a test drive</h4>
             )}
 
-            {isLoggedIn && (
+            {Auth.loggedIn() && (
                 <form onSubmit={handleFormSubmit}>
                     <div className="mb-3">
                         <label htmlFor="dateInput" className="form-label">Please select desired date for test drive</label>

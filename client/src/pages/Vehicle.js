@@ -6,9 +6,11 @@ import { QUERY_SINGLE_VEHICLE } from '../utils/queries';
 
 import AppointmentForm from '../components/AppointmentForm';
 
+// Displays vehicle selected by user
 const Vehicle = () => {
     const { carId } = useParams();
 
+    // Query a single vehicle using vehicle ID
     const { loading, data } = useQuery(QUERY_SINGLE_VEHICLE, {
         variables: { carId: carId },
     });
@@ -23,6 +25,7 @@ const Vehicle = () => {
         return <div>Loading...</div>;
     }
 
+    // Displays vehicle with details in card
     return (
         <div className="container">
             <h3>{car.year} {car.make} {car.model}</h3>
@@ -35,7 +38,7 @@ const Vehicle = () => {
                             <ul style={{ listStyleType: 'none' }}>
                                 <li className="card-text">Price: ${car.price}</li>
                                 <hr />
-                                <li className="card-text">Monthly Payment: {car.monthlyPayment}</li>
+                                <li className="card-text">Monthly Payment: ${car.monthlyPayment}</li>
                                 <hr />
                                 <li className="card-text">Condition: {car.condition}</li>
                                 <hr />
@@ -48,6 +51,7 @@ const Vehicle = () => {
 
                     <br />
 
+                    {/* Display form to create appointment for test drive */}
                     <div className="row p-2">
                         <AppointmentForm carId={car._id} />
                     </div>

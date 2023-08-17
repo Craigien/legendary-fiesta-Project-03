@@ -1,34 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// Displays list of vehicles depending on the vehicle type selected
 const VehicleList = ({ cars, title }) => {
-    console.log("Cars: " + cars);
 
     if (!cars.length) {
         return <h3>No Vehicles Found</h3>
     }
 
+    // Display list of vehicles
     return (
         <div>
             <h3>{title}</h3>
-            {/* {cars &&
-                cars.map((car) => (
-                    <Link to={`/categories/vehicles/${car._id}`}>
-                        <div key={car._id}>
-                            <h4>{car.year} {car.make} {car.model}</h4>
-                            <div className="card">
-                                <img src={require(`../../images/${car.image}`)} className="card-img-top" alt={car.model} />
-                                <div className="card-body">
-                                    <p className="card-text">${car.price}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </Link>
-                ))} */}
 
             {cars &&
                 cars.map((car) => (
-                    <Link to={`/categories/vehicles/${car._id}`} key={car._id}>
+                    <Link to={`/categories/vehicles/${car._id}`} key={car._id} style={{ textDecoration: "none" }}>
                         <div className="card mb-3" style={{ maxWidth: "1080px" }}>
                             <div className="row no-gutters">
                                 <div className="col-md-4">

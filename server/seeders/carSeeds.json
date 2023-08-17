@@ -122,11 +122,11 @@
     {
         "year": "2023",
         "make": "Chevrolet",
-        "model": "Camaro LT",
+        "model": "Camaro ZL1",
         "vehicleType": "Coupe",
         "condition": "New",
-        "price": 32200,
-        "monthlyPayment": 500,
+        "price": 52200,
+        "monthlyPayment": 870,
         "mileage": 0,
         "color": "red",
         "image": "chevrolet-camaro.jpg"
@@ -146,11 +146,11 @@
     {
         "year": "2023",
         "make": "Dodge",
-        "model": "Challenger SXT",
+        "model": "Challenger Hellcat Widebody",
         "vehicleType": "Coupe",
         "condition": "New",
-        "price": 34150,
-        "monthlyPayment": 640,
+        "price": 54150,
+        "monthlyPayment": 903,
         "mileage": 0,
         "color": "red",
         "image": "dodge-challenger.jpg"
@@ -170,7 +170,7 @@
     {
         "year": "2000",
         "make": "Ford",
-        "model": "Mustang GT",
+        "model": "Mustang",
         "vehicleType": "Coupe",
         "condition": "Used",
         "price": 15000,
