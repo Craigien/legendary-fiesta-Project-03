@@ -1,5 +1,6 @@
 const { Schema, Types, model } = require('mongoose');
 
+// Schema to create a car model
 const carSchema = new Schema(
   {
     year: {

@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-// Schema to create a course model
+// Schema to create an appointment model
 const appointmentSchema = new Schema(
     {
         carId: { type: Schema.Types.ObjectId, ref: 'car' },
