@@ -21,7 +21,7 @@ After arriving on the homepage, you can use the nav area to view the inventory b
 
 Dealership Application Screenshot:
 
-![Dealership](client\src\images\ApplicationScreenshot.png)
+![Dealership](client/src/images/ApplicationScreenshot.png)
 
 Link to Deployed Application in Heroku: https://radiant-fortress-44546-0acbf05b7546.herokuapp.com/
 
